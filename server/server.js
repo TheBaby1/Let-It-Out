@@ -1,7 +1,15 @@
 import express from 'express';
+import userRoutes from './routes/users.routes.js';
+import dotenv from 'dotenv';
+import { connectDB } from './config/db.js';
+
+dotenv.config();
 
 const app = express();
 
-app.listen(5000, () => {
-    console.log('Server is running on http://localhost:5000');
+app.use('/', userRoutes);
+
+app.listen(3001, () => {
+    connectDB();
+    console.log('Server is running on http://localhost:3001');
 });
