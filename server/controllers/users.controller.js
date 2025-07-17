@@ -7,11 +7,15 @@ export const healthCheck = (req, res) => {
 export const createUser = async (req, res) => {
     const user = req.body;
 
+    console.log('Received user:', req.body);
+
     try {
         const newUser = new User(user);
         await newUser.save();
+
         res.status(201).json(newUser);
     } catch (error) {
+        console.error('Error creating user:', error);
         res.status(500).json({ message: 'Error creating user', error: error.message });
     }
 }
