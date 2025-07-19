@@ -1,3 +1,4 @@
+import { get } from 'mongoose';
 import { useState } from 'react';
 
 const useUsers = () => {
@@ -28,8 +29,32 @@ const useUsers = () => {
         }
     }
 
+    const getAllUsers = async () => {
+        setLoading(true);
+        setError(null);
+
+        try {
+            const response = await fetch('http://localhost:3001/users/get-all-users', {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' },
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to fetch users');
+            }
+
+            const data = await response.json();
+            return data;
+        } catch (error) {
+
+        } finally {
+            setLoading(false);
+        }
+    }
+
     return {
         createUser,
+        getAllUsers,
         loading,
         error,
     };

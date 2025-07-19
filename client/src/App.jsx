@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 import LandingPage from './pages/LandingPage';
+import LandingPageLayout from './layouts/LandingPageLayout';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,6 +12,7 @@ function App() {
   return (
     <>
       <LandingPage />
+      <LandingPageLayout />
     </>
   )
 }
