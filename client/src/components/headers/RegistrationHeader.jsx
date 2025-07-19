@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import RegisterButton from '../buttons/RegisterButton';
 
 const RegistrationHeader = () => {
 
@@ -18,12 +19,9 @@ const RegistrationHeader = () => {
                     </div>
 
                     <div className="flex items-center gap-x-4">
-                        <button 
-                            className="h-[40px] bg-gradient-to-r from-blue-500 to-blue-700 text-white font-semibold rounded-lg px-4 py-2 hover:opacity-90 transition duration-300 cursor-pointer"
+                        <RegisterButton 
                             onClick={handleClick}
-                        >
-                            Back to Landing
-                        </button>
+                        />
                     </div>
                 </div>
             </div>
