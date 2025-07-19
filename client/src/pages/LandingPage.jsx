@@ -7,6 +7,7 @@ const LandingPage = () => {
     return (
         <>
             <MainHeader />
+            <LandingPageLayout />
         </>
     );
 }

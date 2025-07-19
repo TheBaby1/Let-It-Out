@@ -12,7 +12,7 @@ const MainHeader = () => {
 
     return (
         <>
-            <div className="min-w-full h-[80px] bg-white shadow-md">
+            <div className="min-w-full h-[80px] bg-[#CBF1F5] shadow-md">
                 <div className="flex items-center justify-between px-6 h-full">
                     <div className="w-[60px] h-[60px] bg-gray-200 rounded-[8px]">
 

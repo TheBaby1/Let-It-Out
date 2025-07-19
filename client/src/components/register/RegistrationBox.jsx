@@ -24,7 +24,7 @@ const RegistrationBox = () => {
 
     return (
         <>
-            <div className="flex flex-col gap-y-4 w-full rounded-3xl px-6 py-4 bg-gray-100 shadow-md">
+            <div className="flex flex-col gap-y-4 w-full rounded-3xl px-6 py-4 bg-[#CBF1F5] shadow-md">
                 <h2 className="text-center text-[30px] text-black font-bold mb-4">
                     Register Now!
                 </h2>
