@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import useUsers from '../../hooks/useUsers';
+import { useNavigate } from 'react-router-dom';
 
 const RegistrationBox = () => {
 
     const { createUser, loading, error } = useUsers();
+    const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
         name: '',
@@ -20,6 +22,7 @@ const RegistrationBox = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         await createUser(formData);
+        navigate('/landing-page');
     }
 
     return (
