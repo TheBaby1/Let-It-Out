@@ -2,17 +2,21 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 
 import LandingPage from './pages/LandingPage';
-import LandingPageLayout from './layouts/LandingPageLayout';
+import RegistrationPage from './pages/RegistrationPage';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <LandingPage />
-      <LandingPageLayout />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/landing-page" element={<LandingPage />} />
+            <Route path="/registration-page" element={<RegistrationPage />} />
+          </Routes>
+        </BrowserRouter>
     </>
   )
 }
