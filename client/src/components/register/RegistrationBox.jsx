@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import useUsers from '../../hooks/useUsers';
 import { useNavigate } from 'react-router-dom';
 
-const RegistrationBox = () => {
+const RegistrationBox = ({ setIsModalOpen }) => {
 
     const { createUser, loading, error } = useUsers();
     const navigate = useNavigate();
@@ -13,7 +13,7 @@ const RegistrationBox = () => {
         age: 0,
         email: '',
         password: ''
-    });
+    }); 
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,9 +21,20 @@ const RegistrationBox = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await createUser(formData);
-        navigate('/landing-page');
+
+        try {
+            const result = await createUser(formData);
+            setIsModalOpen(true);
+        } catch (error) {
+            console.error('Registration failed: ', error);
+        }
     }
+
+    const testModal = () => {
+        console.log('Test button clicked');
+        setIsModalOpen(true);
+    }
+
 
     return (
         <>
