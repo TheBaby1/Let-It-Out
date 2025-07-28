@@ -7,7 +7,7 @@ import { updateUserById } from '../controllers/users.controller.js';
 
 const router = express.Router();
 
-router.get('/health', healthCheck);
+router.get('/users/health', healthCheck);
 router.post('/users/create-user', createUser);
 router.get('/users/get-all-users', getAllUsers);
 router.delete('/users/delete-user/:id', deleteUserById);
