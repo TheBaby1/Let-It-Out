@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-rou
 import LandingPage from './pages/LandingPage';
 import RegistrationPage from './pages/RegistrationPage';
 
+import DisplayPosts from './components/display/DisplayPosts';
+
 function App() {
 
   return (
@@ -15,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/landing-page" element={<LandingPage />} />
             <Route path="/registration-page" element={<RegistrationPage />} />
+            <Route path="/test/posts" element={<DisplayPosts /> } />
           </Routes>
         </BrowserRouter>
     </>
