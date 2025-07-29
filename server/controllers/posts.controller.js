@@ -22,3 +22,16 @@ export const createPost = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 }
+
+export const getAllPosts = async (req, res) => {
+    try {
+        const posts = await Post.find();
+        if (!posts) {
+            return res.status(201).json({ message: 'No post found!' });
+        }
+
+        res.status(200).json(posts);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+}
