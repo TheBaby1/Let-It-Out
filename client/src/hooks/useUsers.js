@@ -1,4 +1,3 @@
-import { get } from 'mongoose';
 import { useState } from 'react';
 
 const useUsers = () => {
@@ -52,9 +51,30 @@ const useUsers = () => {
         }
     }
 
+    const loginUser = async (credentials) => {
+
+        try {
+            const response = await fetch('http://localhost:3001/users/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json'},
+                body: JSON.stringify(credentials)
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to login');
+            };
+
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            setError(error.message);
+        }
+    }
+
     return {
         createUser,
         getAllUsers,
+        loginUser,
         loading,
         error,
     };

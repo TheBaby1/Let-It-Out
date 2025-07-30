@@ -57,3 +57,22 @@ export const updateUserById = async (req, res) => {
         res.status(500).json({ message : 'Error updating user', error: error.message });
     }
 }
+
+export const loginUser = async (req, res) => {
+    const { username, password } = req.body;
+
+    try {
+        const loginUser = await User.findOne({ username, password });
+
+        if (!loginUser) {
+            return res.status(401).json({ message: 'User not found' });
+        }
+
+        res.status(200).json({ 
+            message: 'Login Successful', 
+            loginUser: {id: loginUser._id, username: loginUser.username }
+        });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
