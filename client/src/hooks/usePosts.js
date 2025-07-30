@@ -20,8 +20,24 @@ const usePosts = () => {
         }
     }
 
+    const createPost = async (postContent) => {
+        try {
+            const response = await fetch('http://localhost:3001/posts/create-post', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(postContent),
+            });
+
+            const post = await response.json();
+            return post;
+        } catch (error) {
+            console.log('could not create post');
+        }
+    }
+
     return {
-        getPosts
+        getPosts,
+        createPost
     }
 }
 

@@ -3,8 +3,6 @@ import RegistrationBox from '../components/register/RegistrationBox';
 
 const RegistrationLayout = ({ children, setIsModalOpen }) => {
 
-    console.log('registration layout: ', setIsModalOpen);
-
     return (
         <>
             <div className="relative min-h-[90vh] flex flex-col sm:justify-center items-center bg-[#E3FDFD]">

@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-rou
 
 import LandingPage from './pages/LandingPage';
 import RegistrationPage from './pages/RegistrationPage';
+import HomePage from './pages/HomePage';
 
 import DisplayPosts from './components/display/DisplayPosts';
 
@@ -17,7 +18,8 @@ function App() {
           <Routes>
             <Route path="/landing-page" element={<LandingPage />} />
             <Route path="/registration-page" element={<RegistrationPage />} />
-            <Route path="/test/posts" element={<DisplayPosts /> } />
+            <Route path="/test/posts" element={<DisplayPosts />} />
+            <Route path="/home-page" element={<HomePage />} />
           </Routes>
         </BrowserRouter>
     </>
