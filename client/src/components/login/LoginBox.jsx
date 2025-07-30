@@ -30,7 +30,14 @@ const LoginBox = () => {
         } catch (error) {
             console.log('Failed to login user');
         }
+
+        setFormData({
+            username: '',
+            password: ''
+        });
     }
+
+
 
     return (
         <div className="flex flex-col gap-y-4 w-full rounded-3xl px-6 py-4 bg-[#CBF1F5] shadow-md">

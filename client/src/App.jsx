@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-rou
 import LoginPage from './pages/LoginPage';
 import LandingPage from './pages/LandingPage';
 import RegistrationPage from './pages/RegistrationPage';
-
+import PostsPage from './pages/PostsPage';
 import HomePage from './pages/HomePage';
 
 import DisplayPosts from './components/display/DisplayPosts';
@@ -19,7 +19,7 @@ function App() {
             <Route path="/landing-page" element={<LandingPage />} />
             <Route path="/registration-page" element={<RegistrationPage />} />
             <Route path="/login-page" element={<LoginPage />} />
-            <Route path="/test/posts" element={<DisplayPosts />} />
+            <Route path="/test/posts" element={<PostsPage />} />
             <Route path="/home-page" element={<HomePage />} />
             
           </Routes>

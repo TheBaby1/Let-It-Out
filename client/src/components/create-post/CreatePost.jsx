@@ -62,7 +62,7 @@ const CreatePost = () => {
                             type="submit"
                             className="w-[120px] bg-blue-500 text-white py-2 rounded-[8px] hover:bg-blue-600 transition duration-300 cursor-pointer"
                         >
-                            Register
+                            Submit
                         </button>
                     </form>
                 </div>
